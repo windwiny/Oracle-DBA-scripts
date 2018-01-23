@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<!-- End of HtmlHeader.php -->
+
+<!-- Start of Title and Meta -->
+  <title>ORACLE-BASE - DBA Scripts for Oracle 12c, 11g, 10g, 9i and 8i</title>
+  <meta name="description" content="ORACLE-BASE - DBA Scripts for Oracle 12c, 11g, 10g, 9i and 8i" />
+  <meta name="keywords" content="oracle, dba, scripts, 12c, 11g, 10g, 9i, 8i" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/frameworks/bootstrap-3-3-7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="data:text/css;charset=utf-8," data-href="/frameworks/bootstrap-3-3-7/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+
+
+
+  <meta property="og:title" content="DBA Scripts for Oracle (12c, 11g, 10g, 9i, 8i)">
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="DBA Scripts for Oracle 12c, 11g, 10g, 9i and 8i.">
+  <meta property="og:image" content="https://oracle-base.com/images/site-media-image.png">
+  <meta property="og:url" content="https://oracle-base.com/dba/scripts">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta property="og:site_name" content="oracle-base.com">
+  <meta name="twitter:image:alt" content="ORACLE-BASE - Oracle DBA and development articles, scripts, HOWTOs and forums (8i, 9i, 10g, 11g, 12c, 13c)">
+
+<!-- End of Title and Meta -->
+
+  <!-- Font Awesome -->
+  <link href="/frameworks/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom -->
+  <link href="/frameworks/custom/css/callouts.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <link rel="canonical" href="https://oracle-base.com/dba/scripts" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2100406-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2100406-1');
+</script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" style="padding-top:7px;"><img src="/images/site_logo_medium.gif" alt="" /></a>
+    </div>
+
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articles <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/articles/8i/articles-8i">Oracle 8i</a></li>
+            <li><a href="/articles/9i/articles-9i">Oracle 9i</a></li>
+            <li><a href="/articles/10g/articles-10g">Oracle 10g</a></li>
+            <li><a href="/articles/11g/articles-11g">Oracle 11g</a></li>
+            <li><a href="/articles/12c/articles-12c">Oracle 12c</a></li>
+            <li><a href="/articles/13c/articles-13c">Oracle 13c</a></li>
+            <li><a href="/articles/18c/articles-18c">Oracle 18c</a></li>
+            <li><a href="/articles/misc/articles-misc">Miscellaneous</a></li>
+            <li><a href="/articles/plsql/articles-plsql">PL/SQL</a></li>
+            <li><a href="/articles/sql/articles-sql">SQL</a></li>
+            <li><a href="/articles/rac/articles-rac">Oracle RAC</a></li>
+            <li><a href="/articles/apps/articles-apps">Oracle Apps</a></li>
+            <li><a href="/articles/web/articles-web">WebLogic</a></li>
+            <li><a href="/articles/linux/articles-linux">Linux</a></li>
+            <li><a href="/articles/mysql/articles-mysql">MySQL</a></li>
+          </ul>
+        </li>
+        <li><a href="/dba/scripts">Scripts</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/misc/ocp-certification">Certification</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Misc <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/forums/">Forums</a></li>
+            <li><a href="/aggregator/">Aggregator</a></li>
+            <li><a href="/books/books">Books</a></li>
+            <li><a href="/misc/industry-news">Industry News</a></li>
+            <li><a href="/misc/firefox">Firefox Plugins</a></li>
+            <li><a href="/misc/social">Social</a></li>
+            <li><a href="/misc/links">Links</a></li>
+          </ul>
+        </li>
+
+        
+        <li><a href="/misc/site-info">About</a></li>
+      </ul>
+
+      <form class="navbar-form navbar-right" target="_top" action="/misc/search-results" id="cse-search-box">
+        <div class="form-group">
+        <input type="hidden" name="cx" value="partner-pub-9901106718381505:8435801439" />
+        <input type="hidden" name="cof" value="FORID:10" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text"  class="form-control" name="q" size="15" />
+        </div>
+        <button type="submit" name="sa" class="btn btn-default">Search</button>
+      </form>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+
+<div class="container-fluid" id="content" style="margin-right: 5px; margin-left: 5px;">
+
+<!-- End of PageHeaderResponsive.php -->
+
+<!-- Start of Content -->
+
+
+<div class="visible-md-block visible-lg-block">
+  <p>
+  <small>
+    <a href="/articles/8i/articles-8i">8i</a> |
+    <a href="/articles/9i/articles-9i">9i</a> |
+    <a href="/articles/10g/articles-10g">10g</a> |
+    <a href="/articles/11g/articles-11g">11g</a> |
+    <a href="/articles/12c/articles-12c">12c</a> |
+    <a href="/articles/13c/articles-13c">13c</a> |
+    <a href="/articles/misc/articles-misc">Misc</a> |
+    <a href="/articles/plsql/articles-plsql">PL/SQL</a> |
+    <a href="/articles/sql/articles-sql">SQL</a> |
+    <a href="/articles/rac/articles-rac">RAC</a> |
+    <a href="/articles/web/articles-web">WebLogic</a> |
+    <a href="/articles/linux/articles-linux">Linux</a>
+  </small>
+  </p>
+</div>
+
+ <small><a href="/">Home</a> &#187; <a href="/dba">Dba</a> &#187; Here</small><br>
+
+  <h1>DBA Scripts</h1>
+
+
+<!-- Scripts Desktop -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9901106718381505"
+     data-ad-slot="4084969135"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <h2>Monitoring</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=monitoring&amp;file=access.sql">access.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=active_sessions.sql">active_sessions.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=cache_hit_ratio.sql">cache_hit_ratio.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=call_stack.sql">call_stack.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=code_dep.sql">code_dep.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=code_dep_distinct.sql">code_dep_distinct.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=code_dep_on.sql">code_dep_on.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=code_dep_tree.sql">code_dep_tree.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=column_defaults.sql">column_defaults.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=controlfiles.sql">controlfiles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=datafiles.sql">datafiles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=db_cache_advice.sql">db_cache_advice.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=db_info.sql">db_info.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=db_links.sql">db_links.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=db_links_open.sql">db_links_open.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=db_properties.sql">db_properties.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=df_free_space.sql">df_free_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=directories.sql">directories.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=directory_permissions.sql">directory_permissions.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=dispatchers.sql">dispatchers.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=error_stack.sql">error_stack.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=errors.sql">errors.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=explain.sql">explain.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=file_io.sql">file_io.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=fk_columns.sql">fk_columns.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=fks.sql">fks.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=free_space.sql">free_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=health.sql">health.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=hidden_parameters.sql">hidden_parameters.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=high_water_mark.sql">high_water_mark.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=hot_blocks.sql">hot_blocks.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=identify_trace_file.sql">identify_trace_file.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=index_extents.sql">index_extents.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=index_monitoring_status.sql">index_monitoring_status.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=index_partitions.sql">index_partitions.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=index_usage.sql">index_usage.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=invalid_objects.sql">invalid_objects.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=jobs.sql">jobs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=jobs_running.sql">jobs_running.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=large_lob_segments.sql">large_lob_segments.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=large_segments.sql">large_segments.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=latch_hit_ratios.sql">latch_hit_ratios.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=latch_holders.sql">latch_holders.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=latches.sql">latches.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=library_cache.sql">library_cache.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=license.sql">license.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=locked_objects.sql">locked_objects.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=locked_objects_internal.sql">locked_objects_internal.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=logfiles.sql">logfiles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=longops.sql">longops.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=lru_latch_ratio.sql">lru_latch_ratio.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=max_extents.sql">max_extents.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=monitoring&amp;file=min_datafile_size.sql">min_datafile_size.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=monitor.sql">monitor.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=monitor_memory.sql">monitor_memory.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=monitoring_status.sql">monitoring_status.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=nls_params.sql">nls_params.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=non_indexed_fks.sql">non_indexed_fks.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=obj_lock.sql">obj_lock.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=object_privs.sql">object_privs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=object_status.sql">object_status.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=objects.sql">objects.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=open_cursors.sql">open_cursors.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=open_cursors_by_sid.sql">open_cursors_by_sid.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=open_cursors_full_by_sid.sql">open_cursors_full_by_sid.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=options.sql">options.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=param_valid_values.sql">param_valid_values.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=parameter_diffs.sql">parameter_diffs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=parameters.sql">parameters.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=parameters_non_default.sql">parameters_non_default.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=part_tables.sql">part_tables.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=pga_target_advice.sql">pga_target_advice.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=pipes.sql">pipes.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=profiler_run_details.sql">profiler_run_details.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=profiler_runs.sql">profiler_runs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=profiles.sql">profiles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=rbs_extents.sql">rbs_extents.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=rbs_stats.sql">rbs_stats.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=recovery_status.sql">recovery_status.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=recyclebin.sql">recyclebin.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=redo_by_day.sql">redo_by_day.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=redo_by_hour.sql">redo_by_hour.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=redo_by_min.sql">redo_by_min.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=registry_history.sql">registry_history.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=role_privs.sql">role_privs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=roles.sql">roles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=search_source.sql">search_source.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=segment_size.sql">segment_size.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=segment_stats.sql">segment_stats.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_events.sql">session_events.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_events_by_sid.sql">session_events_by_sid.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_events_by_spid.sql">session_events_by_spid.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_io.sql">session_io.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_pga.sql">session_pga.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_rollback.sql">session_rollback.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_stats.sql">session_stats.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_stats_by_sid.sql">session_stats_by_sid.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_undo.sql">session_undo.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=session_waits.sql">session_waits.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=sessions.sql">sessions.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=sessions_by_machine.sql">sessions_by_machine.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=show_indexes.sql">show_indexes.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=show_space.sql">show_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=show_tables.sql">show_tables.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=monitoring&amp;file=source.sql">source.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=spfile_parameters.sql">spfile_parameters.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=sql_area.sql">sql_area.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=sql_text.sql">sql_text.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=sql_text_by_sid.sql">sql_text_by_sid.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=statistics_prefs.sql">statistics_prefs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=synonyms_to_missing_objects.sql">synonyms_to_missing_objects.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=system_events.sql">system_events.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=system_parameters.sql">system_parameters.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=system_privs.sql">system_privs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=system_stats.sql">system_stats.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=table_dep.sql">table_dep.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=table_extents.sql">table_extents.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=table_indexes.sql">table_indexes.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=table_partitions.sql">table_partitions.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=table_stats.sql">table_stats.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=table_triggers.sql">table_triggers.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=tables_with_locked_stats.sql">tables_with_locked_stats.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=tables_with_zero_rows.sql">tables_with_zero_rows.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=tablespaces.sql">tablespaces.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=temp_extent_map.sql">temp_extent_map.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=temp_free_space.sql">temp_free_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=temp_io.sql">temp_io.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=temp_segments.sql">temp_segments.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=temp_usage.sql">temp_usage.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=tempfiles.sql">tempfiles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=tempseg_usage.sql">tempseg_usage.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=top_latches.sql">top_latches.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=top_sessions.sql">top_sessions.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=top_sql.sql">top_sql.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=trace_run_details.sql">trace_run_details.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=trace_runs.sql">trace_runs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=ts_datafiles.sql">ts_datafiles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=ts_extent_map.sql">ts_extent_map.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=ts_free_space.sql">ts_free_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=ts_full.sql">ts_full.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=ts_thresholds.sql">ts_thresholds.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=ts_thresholds_reset.sql">ts_thresholds_reset.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=ts_thresholds_set_default.sql">ts_thresholds_set_default.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=tuning.sql">tuning.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=unusable_indexes.sql">unusable_indexes.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=unused_space.sql">unused_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=user_hit_ratio.sql">user_hit_ratio.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=user_roles.sql">user_roles.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=user_system_privs.sql">user_system_privs.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=user_temp_space.sql">user_temp_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=user_undo_space.sql">user_undo_space.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=users.sql">users.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=users_with_role.sql">users_with_role.sql</a></p></li>
+        <li><p><a href="script?category=monitoring&amp;file=users_with_sys_priv.sql">users_with_sys_priv.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>10g</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=10g&amp;file=active_session_waits.sql">active_session_waits.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=ash.sql">ash.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=db_usage_hwm.sql">db_usage_hwm.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=dynamic_memory.sql">dynamic_memory.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=event_histogram.sql">event_histogram.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=feature_usage.sql">feature_usage.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=flashback_db_info.sql">flashback_db_info.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=generate_multiple_awr_reports.sql">generate_multiple_awr_reports.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=job_chain_rules.sql">job_chain_rules.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=job_chain_steps.sql">job_chain_steps.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=10g&amp;file=job_chains.sql">job_chains.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=job_classes.sql">job_classes.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=job_programs.sql">job_programs.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=job_running_chains.sql">job_running_chains.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=job_schedules.sql">job_schedules.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=jobs.sql">jobs.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=jobs_running.sql">jobs_running.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=lock_tree.sql">lock_tree.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=scheduler_attributes.sql">scheduler_attributes.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=segment_advisor.sql">segment_advisor.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=10g&amp;file=services.sql">services.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=session_waits.sql">session_waits.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=sga_buffers.sql">sga_buffers.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=sga_dynamic_components.sql">sga_dynamic_components.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=sga_dynamic_free_memory.sql">sga_dynamic_free_memory.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=sga_resize_ops.sql">sga_resize_ops.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=sysaux_occupants.sql">sysaux_occupants.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=test_calendar_string.sql">test_calendar_string.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=window_groups.sql">window_groups.sql</a></p></li>
+        <li><p><a href="script?category=10g&amp;file=windows.sql">windows.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>11g</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=11g&amp;file=admin_privs.sql">admin_privs.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=autotask_change_window_schedules.sql">autotask_change_window_schedules.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=autotask_job_history.sql">autotask_job_history.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=autotask_schedule.sql">autotask_schedule.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=default_passwords.sql">default_passwords.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=diag_info.sql">diag_info.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=extended_stats.sql">extended_stats.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=fda.sql">fda.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=fda_tables.sql">fda_tables.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=fda_ts.sql">fda_ts.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=11g&amp;file=identify_trace_file.sql">identify_trace_file.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=job_credentials.sql">job_credentials.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=job_output_file.sql">job_output_file.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=job_run_details.sql">job_run_details.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=memory_dynamic_components.sql">memory_dynamic_components.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=memory_resize_ops.sql">memory_resize_ops.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=memory_target_advice.sql">memory_target_advice.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=network_acl_privileges.sql">network_acl_privileges.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=network_acls.sql">network_acls.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=result_cache_objects.sql">result_cache_objects.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=11g&amp;file=result_cache_report.sql">result_cache_report.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=result_cache_statistics.sql">result_cache_statistics.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=result_cache_status.sql">result_cache_status.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=session_fix.sql">session_fix.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=statistics_global_prefs.sql">statistics_global_prefs.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=system_fix.sql">system_fix.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=system_fix_count.sql">system_fix_count.sql</a></p></li>
+        <li><p><a href="script?category=11g&amp;file=temp_free_space.sql">temp_free_space.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>12c</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=12c&amp;file=cdb_resource_plan_directives.sql">cdb_resource_plan_directives.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=cdb_resource_plans.sql">cdb_resource_plans.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=cdb_resource_profile_directives.sql">cdb_resource_profile_directives.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=credentials.sql">credentials.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=host_aces.sql">host_aces.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=12c&amp;file=host_acls.sql">host_acls.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=login.sql">login.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=pdbs.sql">pdbs.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=plugin_violations.sql">plugin_violations.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=priv_captures.sql">priv_captures.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=12c&amp;file=redaction_columns.sql">redaction_columns.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=redaction_policies.sql">redaction_policies.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=redaction_value_defaults.sql">redaction_value_defaults.sql</a></p></li>
+        <li><p><a href="script?category=12c&amp;file=services.sql">services.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Scripts Desktop -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9901106718381505"
+     data-ad-slot="4084969135"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <h2>Constraints</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=constraints&amp;file=disable_chk.sql">disable_chk.sql</a></p></li>
+        <li><p><a href="script?category=constraints&amp;file=disable_fk.sql">disable_fk.sql</a></p></li>
+        <li><p><a href="script?category=constraints&amp;file=disable_pk.sql">disable_pk.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=constraints&amp;file=disable_ref_fk.sql">disable_ref_fk.sql</a></p></li>
+        <li><p><a href="script?category=constraints&amp;file=enable_chk.sql">enable_chk.sql</a></p></li>
+        <li><p><a href="script?category=constraints&amp;file=enable_fk.sql">enable_fk.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=constraints&amp;file=enable_pk.sql">enable_pk.sql</a></p></li>
+        <li><p><a href="script?category=constraints&amp;file=enable_ref_fk.sql">enable_ref_fk.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Miscellaneous</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=miscellaneous&amp;file=analyze_all.sql">analyze_all.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=base64decode.sql">base64decode.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=base64encode.sql">base64encode.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=blob_to_clob.sql">blob_to_clob.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=clob_to_blob.sql">clob_to_blob.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=column_comments.sql">column_comments.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=comments.sql">comments.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=compile_all.sql">compile_all.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=compile_all_bodies.sql">compile_all_bodies.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=compile_all_funcs.sql">compile_all_funcs.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=compile_all_procs.sql">compile_all_procs.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=compile_all_specs.sql">compile_all_specs.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=compile_all_trigs.sql">compile_all_trigs.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=compile_all_views.sql">compile_all_views.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=conversion_api.sql">conversion_api.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=miscellaneous&amp;file=csv.sql">csv.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=date_api.sql">date_api.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=dict_comments.sql">dict_comments.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=digest_auth_api.sql">digest_auth_api.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=drop_all.sql">drop_all.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=dsp.pkb">dsp.pkb</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=dsp.pks">dsp.pks</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=err.pkb">err.pkb</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=err.pks">err.pks</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=find_object.sql">find_object.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=ftp.pkb">ftp.pkb</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=ftp.pks">ftp.pks</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=gen_health.sql">gen_health.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=get_pivot.sql">get_pivot.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=login.sql">login.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=miscellaneous&amp;file=part_hv_to_date.sql">part_hv_to_date.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=proc_defs.sql">proc_defs.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=rebuild_index.sql">rebuild_index.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=smart_quotes_api.sql">smart_quotes_api.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=soap_api.sql">soap_api.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=string_agg.sql">string_agg.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=string_api.sql">string_api.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=switch_schema.sql">switch_schema.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=table_comments.sql">table_comments.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=table_defs.sql">table_defs.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=table_differences.sql">table_differences.sql</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=trc.pkb">trc.pkb</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=trc.pks">trc.pks</a></p></li>
+        <li><p><a href="script?category=miscellaneous&amp;file=ts_move_api.sql">ts_move_api.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Real Application Clusters (RAC)</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=rac&amp;file=locked_objects_rac.sql">locked_objects_rac.sql</a></p></li>
+        <li><p><a href="script?category=rac&amp;file=longops_rac.sql">longops_rac.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=rac&amp;file=monitor_memory_rac.sql">monitor_memory_rac.sql</a></p></li>
+        <li><p><a href="script?category=rac&amp;file=session_undo_rac.sql">session_undo_rac.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=rac&amp;file=session_waits_rac.sql">session_waits_rac.sql</a></p></li>
+        <li><p><a href="script?category=rac&amp;file=sessions_rac.sql">sessions_rac.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Resource Manager</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=resource_manager&amp;file=active_plan.sql">active_plan.sql</a></p></li>
+        <li><p><a href="script?category=resource_manager&amp;file=consumer_group_usage.sql">consumer_group_usage.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=resource_manager&amp;file=consumer_groups.sql">consumer_groups.sql</a></p></li>
+        <li><p><a href="script?category=resource_manager&amp;file=plan_directives.sql">plan_directives.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=resource_manager&amp;file=resource_plans.sql">resource_plans.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Script Creation</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=script_creation&amp;file=backup.sql">backup.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=build_api.sql">build_api.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=build_api2.sql">build_api2.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=create_data.sql">create_data.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=db_link_ddl.sql">db_link_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=directory_ddl.sql">directory_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=drop_cons_on_table.sql">drop_cons_on_table.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=drop_fks_on_table.sql">drop_fks_on_table.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=drop_fks_ref_table.sql">drop_fks_ref_table.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=drop_indexes.sql">drop_indexes.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=fks_on_table_ddl.sql">fks_on_table_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=fks_ref_table_ddl.sql">fks_ref_table_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=index_monitoring_off.sql">index_monitoring_off.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=script_creation&amp;file=index_monitoring_on.sql">index_monitoring_on.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=logon_as_user.sql">logon_as_user.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=logon_as_user_orig.sql">logon_as_user_orig.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=monitoring_off.sql">monitoring_off.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=monitoring_on.sql">monitoring_on.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=network_acls_ddl.sql">network_acls_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=object_grants.sql">object_grants.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=profile_ddl.sql">profile_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=rbs_structure.sql">rbs_structure.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=recreate_table.sql">recreate_table.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=role_ddl.sql">role_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=sequence_ddl.sql">sequence_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=synonym_by_object_owner_ddl.sql">synonym_by_object_owner_ddl.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=script_creation&amp;file=synonym_ddl.sql">synonym_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=synonym_public_remote_ddl.sql">synonym_public_remote_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=table_constraints_ddl.sql">table_constraints_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=table_ddl.sql">table_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=table_grants_ddl.sql">table_grants_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=table_indexes_ddl.sql">table_indexes_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=table_triggers_ddl.sql">table_triggers_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=tablespace_ddl.sql">tablespace_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=tablespace_structure.sql">tablespace_structure.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=trigger_ddl.sql">trigger_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=user_ddl.sql">user_ddl.sql</a></p></li>
+        <li><p><a href="script?category=script_creation&amp;file=view_ddl.sql">view_ddl.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Security</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=security&amp;file=grant_delete.sql">grant_delete.sql</a></p></li>
+        <li><p><a href="script?category=security&amp;file=grant_execute.sql">grant_execute.sql</a></p></li>
+        <li><p><a href="script?category=security&amp;file=grant_insert.sql">grant_insert.sql</a></p></li>
+        <li><p><a href="script?category=security&amp;file=grant_select.sql">grant_select.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=security&amp;file=grant_update.sql">grant_update.sql</a></p></li>
+        <li><p><a href="script?category=security&amp;file=package_synonyms.sql">package_synonyms.sql</a></p></li>
+        <li><p><a href="script?category=security&amp;file=schema_write_access.sql">schema_write_access.sql</a></p></li>
+        <li><p><a href="script?category=security&amp;file=sequence_synonyms.sql">sequence_synonyms.sql</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=security&amp;file=table_synonyms.sql">table_synonyms.sql</a></p></li>
+        <li><p><a href="script?category=security&amp;file=view_synonyms.sql">view_synonyms.sql</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>External Scripts</h2>
+  <ul>
+    <li><a href="http://www.oracle-developer.net/utilities.php">MOATS</a></li>
+    <li><a href="http://tech.e2sn.com/oracle-scripts-and-tools/session-snapper">Snapper</a></li>
+    <li><a href="http://canali.web.cern.ch/canali/resources.htm">OraLatencyMap</a></li>
+    <li><a href="http://sqlfiddle.com/">SQL Fiddle</a></li>
+  </ul>
+
+  <h2>WebLogic</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=weblogic&amp;file=deploy_app.py.txt">deploy_app.py.txt</a></p></li>
+        <li><p><a href="script?category=weblogic&amp;file=deploy_app.sh">deploy_app.sh</a></p></li>
+        <li><p><a href="script?category=weblogic&amp;file=start-domain.sh">start-domain.sh</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=weblogic&amp;file=start-forms-reports.sh">start-forms-reports.sh</a></p></li>
+        <li><p><a href="script?category=weblogic&amp;file=start-node-manager.sh">start-node-manager.sh</a></p></li>
+        <li><p><a href="script?category=weblogic&amp;file=stop-domain.sh">stop-domain.sh</a></p></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <ul>
+        <li><p><a href="script?category=weblogic&amp;file=stop-forms-reports.sh">stop-forms-reports.sh</a></p></li>
+        <li><p><a href="script?category=weblogic&amp;file=stop-node-manager.sh">stop-node-manager.sh</a></p></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Scripts Desktop -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9901106718381505"
+     data-ad-slot="4084969135"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- End of Content -->
+
+<!-- Start of PageFooterResponsive.php -->
+
+
+</div> <!-- content -->
+
+<p>&nbsp;</p>
+
+<div class="container-fluid" id="footer">
+
+      <div style="text-align:center;line-height:10px;">
+
+      <a id="twtButtonBottom" style="color:#4099FF" target="_blank" href="http://twitter.com/intent/tweet?status=TITLE+URL"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+
+      <a id="fbButtonBottom" style="color:#3b5998" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=URL&title=TITLE"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+
+      <a id="gplusButtonBottom" style="color:#dd4b39" target="_blank" href="https://plus.google.com/share?url=URL"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
+
+      <a id="liButtonBottom" style="color:#0077B5" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=URL&title=TITLE&source=oracle-base.com"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+
+      <a id="redditButtonBottom" style="color:#FF5700" target="_blank" href="http://www.reddit.com/submit?url=URL&title=TITLE"><i class="fa fa-reddit-square fa-3x" aria-hidden="true"></i></a>
+
+   </div>
+
+<script>
+var doc_title = encodeURIComponent(document.title);
+var doc_url   = encodeURIComponent(window.location.href);
+
+document.getElementById('twtButtonBottom').setAttribute('href', 'http://twitter.com/intent/tweet?status='+doc_title+'+'+doc_url);
+document.getElementById('fbButtonBottom').setAttribute('href', 'http://www.facebook.com/sharer/sharer.php?u='+doc_url+'&title='+doc_title);
+document.getElementById('gplusButtonBottom').setAttribute('href', 'https://plus.google.com/share?url='+doc_url);
+document.getElementById('liButtonBottom').setAttribute('href', 'http://www.linkedin.com/shareArticle?mini=true&url='+doc_url+'&title='+doc_title+'&source=oracle-base.com');
+document.getElementById('redditButtonBottom').setAttribute('href', 'http://www.reddit.com/submit?url='+doc_url+'&title='+doc_title);
+</script>
+
+
+    <p class="text-center">
+      <a href="/">Home</a> |
+      <a href="/articles/articles">Articles</a> |
+      <a href="/dba/scripts">Scripts</a> |
+      <a href="/blog/">Blog</a> |
+      <a href="/misc/ocp-certification">Certification</a> |
+      <a href="/misc/miscellaneous">Misc</a> |
+      <a href="/misc/site-info">About</a>
+    </p>
+
+    <p class="text-center">
+      <a href="/misc/site-info#biog">About Tim Hall</a><br>
+      <a href="/misc/site-info#copyright">Copyright &amp; Disclaimer</a><br>
+      <!--a href="http://validator.w3.org/check?uri=https://oracle-base.com/dba/scripts.php" rel="nofollow">HTML</a-->
+      <!--a href="http://jigsaw.w3.org/css-validator/validator?uri=https://oracle-base.com/dba/scripts.php" rel="nofollow">CSS</a-->
+    </p>
+
+<!--script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    floatPosition: google.translate.TranslateElement.FloatPosition.BOTTOM_RIGHT
+  });
+}
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</div> <!-- footer -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/frameworks/jquery/jquery-1.12.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/frameworks/bootstrap-3-3-7/js/bootstrap.min.js"></script>
+
+
+<!-- End of PageFooterResponsive.php --><!-- Start of HtmlFooter.php -->
+</body>
+</html>
